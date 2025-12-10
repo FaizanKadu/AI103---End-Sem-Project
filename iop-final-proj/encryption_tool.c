@@ -32,16 +32,16 @@ int check_dictionary(const char *text)
     char dict_word[100];
     while (fscanf(dictionary_file, "%99s", dict_word) == 1) 
     {
-        
         if (strcmp(lower_word, dict_word) == 0) 
         {
             fclose(dictionary_file);
-        
+            return 1;
         }
     }
 
+  
     fclose(dictionary_file);
-    return 0;
+    return 0; 
 }
 
 
